@@ -1,63 +1,81 @@
-import Confetti from "react-confetti";
-import type { Category } from "../types/types";
+import { Result } from "@/data/results";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Share2, Camera, RotateCcw } from "lucide-react";
 
-type Props = {
-  total: number;
-  category: Category;
+interface ResultCardProps {
+  result: Result;
+  score: number;
   onRestart: () => void;
-};
-
-export default function ResultCard({ total, category, onRestart }: Props) {
-  const showConfetti = total > 60;
-  const id = "result-card";
-
-  return (
-    <div
-      id={id}
-      className="p-6 rounded-xl shadow-2xl relative overflow-hidden"
-      style={{
-        background:
-          "linear-gradient(90deg, rgba(124,58,237,0.9) 0%, rgba(236,72,153,0.9) 100%)",
-        color: "white",
-      }}
-    >
-      {showConfetti && <Confetti numberOfPieces={200} recycle={false} />}
-      <h2 className="text-3xl font-extrabold mb-2">{category.label}</h2>
-      <p className="mb-4 opacity-90">Score: {total}</p>
-      <blockquote className="italic mb-6 opacity-95">
-        {generateRoast(category.label)}
-      </blockquote>
-
-      <div className="flex gap-3">
-        <button
-          onClick={onRestart}
-          className="px-4 py-2 bg-white text-slate-900 rounded-md font-semibold"
-        >
-          Try again
-        </button>
-
-        <button
-          onClick={() => {
-            alert("Share/export not implemented yet — will use html2canvas");
-          }}
-          className="px-4 py-2 border border-white rounded-md"
-        >
-          Share (soon)
-        </button>
-      </div>
-    </div>
-  );
+  onCapture: () => void;
+  onShare: () => void;
 }
 
-function generateRoast(label: string): string {
-  const roasts: Record<string, string> = {
-    "Junior PleasantCoder": "You write comments and floss after commits. Cute.",
-    "StackOverflow Enthusiast":
-      "You copy solutions and call it engineering. Bold.",
-    "Spaghetti Wrangler": "Your app runs on duct tape and prayer. Keep going.",
-    "Sh*tty Architect":
-      "You design systems that scare the infra team. Respect.",
-    "Nuclear Dev": "You don't push to main — you detonate it. Absolute unit.",
-  };
-  return roasts[label] ?? "You're indescribable and probably dangerous.";
+export function ResultCard({ result, score, onRestart, onCapture, onShare }: ResultCardProps) {
+  return (
+    <div className="w-full max-w-3xl space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
+      <Card 
+        className={`border-8 border-${result.color} bg-card/90 backdrop-blur-sm rotate-broken`}
+        style={{ boxShadow: '12px 12px 0px rgba(0,0,0,0.8)' }}
+      >
+        <CardHeader className="text-center space-y-6 comic-sans">
+          <div className="text-9xl animate-bounce glitch">{result.emoji}</div>
+          <CardTitle className={`text-4xl md:text-6xl font-black text-${result.color} chaos-text impact uppercase`} style={{ transform: 'rotate(-2deg)' }}>
+            {result.title}
+          </CardTitle>
+          <CardDescription className="text-3xl text-foreground font-black comic-sans" style={{ textShadow: '2px 2px 0px rgba(0,0,0,0.5)' }}>
+            💀 Score: {score} / 600 💀
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-8">
+          <div className="space-y-6 text-center">
+            <p className="text-2xl md:text-3xl text-primary font-black comic-sans" style={{ transform: 'rotate(1deg)' }}>
+              {result.description}
+            </p>
+            <div 
+              className={`p-8 border-4 border-${result.color} bg-${result.color}/20 rotate-broken`}
+              style={{ 
+                boxShadow: '6px 6px 0px rgba(0,0,0,0.6)',
+                transform: 'rotate(-1deg)'
+              }}
+            >
+              <p className="text-lg md:text-xl text-foreground font-bold comic-sans leading-relaxed">
+                🔥💀🔥 <span className="font-black uppercase impact">GET F*CKING ROASTED:</span> {result.roast}
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-8">
+            <Button
+              onClick={onCapture}
+              variant="outline"
+              className="w-full border-4 border-cyber-purple text-cyber-purple hover:bg-cyber-purple hover:text-black font-black comic-sans text-lg h-auto py-4"
+              style={{ boxShadow: '4px 4px 0px rgba(0,0,0,0.5)', transform: 'rotate(-1deg)' }}
+            >
+              <Camera className="mr-2 h-6 w-6" />
+              📸 Shame Selfie
+            </Button>
+            <Button
+              onClick={onShare}
+              variant="outline"
+              className="w-full border-4 border-warning-orange text-warning-orange hover:bg-warning-orange hover:text-black font-black comic-sans text-lg h-auto py-4"
+              style={{ boxShadow: '4px 4px 0px rgba(0,0,0,0.5)', transform: 'rotate(1deg)' }}
+            >
+              <Share2 className="mr-2 h-6 w-6" />
+              🔥 Share Roast
+            </Button>
+            <Button
+              onClick={onRestart}
+              variant="outline"
+              className="w-full border-4 border-hot-pink text-hot-pink hover:bg-hot-pink hover:text-black font-black comic-sans text-lg h-auto py-4"
+              style={{ boxShadow: '4px 4px 0px rgba(0,0,0,0.5)', transform: 'rotate(-0.5deg)' }}
+            >
+              <RotateCcw className="mr-2 h-6 w-6" />
+              🔄 Try Again
+            </Button>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  );
 }

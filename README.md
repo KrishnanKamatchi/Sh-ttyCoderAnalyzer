@@ -45,7 +45,7 @@ But hey, it makes you laugh — and maybe question your life choices.
 You can totally run this mess locally.
 
 ```bash
-git clone https://github.com/<your-username>/shittycoderanalyzer.git
+git clone https://github.com/KrishnanKamatchi/Sh-ttyCoderAnalyzer.git
 cd shittycoderanalyzer
 npm install
 npm run dev
