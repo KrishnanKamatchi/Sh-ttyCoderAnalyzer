@@ -56,7 +56,7 @@ export const results: Result[] = [
     title: "💩 Dumpster Fire Dev",
     description: "Your existence is a bug report, you beautiful catastrophe.",
     roast:
-      "Motherf*cker, you’re the reason we have rollbacks and therapy. Your bugs have fan clubs. Tech or non-tech, you’re a walking sh#tshow. Quit coding and sell hotdogs, you glorious f*ck-up. Take a bow, then delete yourself. 🔥",
+      "Mowerf*cker, you’re the reason we have rollbacks and therapy. Your bugs have fan clubs. Tech or non-tech, you’re a walking sh#tshow. Quit coding and sell hotdogs, you glorious f*ck-up. Take a bow, then delete yourself. 🔥",
     emoji: "💩",
     color: "toxic-red",
   },
