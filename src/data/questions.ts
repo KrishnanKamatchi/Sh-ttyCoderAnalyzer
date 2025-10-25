@@ -1,104 +1,131 @@
-import type { Question } from "../types/types";
+export interface Question {
+  id: number;
+  question: string;
+  options: {
+    text: string;
+    points: number;
+  }[];
+}
 
-export const QUESTIONS: Question[] = [
+export const questions: Question[] = [
   {
-    id: "q1",
-    text: "How often do you push directly to main?",
+    id: 1,
+    question: "🐧 How do you introduce yourself at parties?",
     options: [
-      { label: "Never", score: 0 },
-      { label: "Sometimes", score: 3 },
-      { label: "Often", score: 6 },
-      { label: "rm -rf / (brave)", score: 10 },
+      { text: "I use Arch btw 😎", points: 45 },
+      { text: "I code in Rust, the superior language 🦀", points: 40 },
+      { text: "I'm a developer... *awkwardly shuffles away*", points: 30 },
+      { text: "I actually have social skills", points: 5 },
     ],
   },
   {
-    id: "q2",
-    text: "Commit message style",
+    id: 2,
+    question: "📝 What's your text editor of choice?",
     options: [
-      { label: "Descriptive", score: 0 },
-      { label: "Brief", score: 2 },
-      { label: "fix", score: 5 },
-      { label: "idk lol", score: 8 },
+      { text: "Vim - I still don't know how to exit", points: 50 },
+      { text: "Emacs - it's an OS that happens to edit text", points: 45 },
+      { text: "VSCode with 80 extensions that slow my PC to death", points: 35 },
+      { text: "Notepad++ because I hate myself", points: 40 },
     ],
   },
   {
-    id: "q3",
-    text: "Favorite debugging technique",
+    id: 3,
+    question: "💀 You get a segmentation fault. What's your reaction?",
     options: [
-      { label: "Debugger", score: 0 },
-      { label: "console.log everywhere", score: 4 },
-      { label: "Rubber ducking", score: 2 },
-      { label: "Sacrifice to CI", score: 7 },
+      { text: "Stare at the screen until it fixes itself", points: 50 },
+      { text: "Add printf() debugging like it's 1975", points: 40 },
+      { text: "Blame it on cosmic rays flipping bits", points: 45 },
+      { text: "Use a debugger like a functional human being", points: 10 },
     ],
   },
   {
-    id: "q4",
-    text: "When you see 'works on my machine', you:",
+    id: 4,
+    question: "🗑️ How big is your node_modules folder?",
     options: [
-      { label: "Fix it", score: 0 },
-      { label: "Ignore it", score: 3 },
-      { label: "Blame ops", score: 6 },
-      { label: "Add 50 console.log", score: 8 },
+      { text: "Bigger than my will to live (3GB+)", points: 50 },
+      { text: "It has its own gravitational pull (1-3GB)", points: 40 },
+      { text: "Only slightly larger than the sun (500MB-1GB)", points: 30 },
+      { text: "I use Deno, what's node_modules?", points: 20 },
     ],
   },
   {
-    id: "q5",
-    text: "How many packages are in your package.json?",
+    id: 5,
+    question: "🦀 The Rust borrow checker rejected your code. How do you feel?",
     options: [
-      { label: "0–5", score: 0 },
-      { label: "6–20", score: 2 },
-      { label: "21–100", score: 5 },
-      { label: "1000+ (kidding?)", score: 9 },
+      { text: "Add .clone() to literally everything until it compiles", points: 50 },
+      { text: "Wrap everything in Rc<RefCell<Arc<Mutex<T>>>> and cry", points: 45 },
+      { text: "Go back to JavaScript where pointers can't hurt me", points: 40 },
+      { text: "Actually understand ownership and lifetimes", points: 5 },
     ],
   },
   {
-    id: "q6",
-    text: "Tabs or spaces?",
+    id: 6,
+    question: "🐳 What's your Docker/Kubernetes experience?",
     options: [
-      { label: "Tabs", score: 0 },
-      { label: "Spaces", score: 0 },
-      { label: "Both depending on mood", score: 4 },
-      { label: "I indent with chaos", score: 7 },
+      { text: "I have 47 dangling containers consuming all my RAM", points: 45 },
+      { text: "My yaml files are longer than the Bible", points: 40 },
+      { text: "It works on my machine, that's the container's problem now", points: 50 },
+      { text: "I actually read the f*cking documentation", points: 10 },
     ],
   },
   {
-    id: "q7",
-    text: "CI fails — you:",
+    id: 7,
+    question: "🤬 Someone suggests using Angular for a new project:",
     options: [
-      { label: "Fix tests", score: 0 },
-      { label: "Re-run", score: 2 },
-      { label: "Skip tests", score: 6 },
-      { label: "--no-verify life", score: 9 },
+      { text: "Block them on all platforms immediately", points: 50 },
+      { text: "Assume they're a time traveler from 2015", points: 45 },
+      { text: "Silently judge them while nodding politely", points: 35 },
+      { text: "Each framework has its use case!", points: 5 },
     ],
   },
   {
-    id: "q8",
-    text: "Preferred framework",
+    id: 8,
+    question: "🔒 You have a race condition. Your debugging strategy:",
     options: [
-      { label: "React", score: 0 },
-      { label: "Angular", score: 2 },
-      { label: "Vue", score: 2 },
-      { label: "My own 200-line framework", score: 6 },
+      { text: "Add random sleep() calls until it goes away", points: 50 },
+      { text: "Sacrifice a keyboard to the computing gods", points: 45 },
+      { text: "Add more mutexes and hope for the best", points: 40 },
+      { text: "Use proper synchronization primitives", points: 10 },
     ],
   },
   {
-    id: "q9",
-    text: "You copy code from StackOverflow — you:",
+    id: 9,
+    question: "🗑️ Your opinion on null pointer exceptions?",
     options: [
-      { label: "Read & adapt", score: 0 },
-      { label: "Paste & pray", score: 6 },
-      { label: "Fail the build", score: 8 },
-      { label: "Rewrite the internet", score: 3 },
+      { text: "They're a billion dollar mistake that haunts my dreams", points: 45 },
+      { text: "Just add if (ptr != NULL) everywhere lmao", points: 40 },
+      { text: "Let it crash in production, users are free testers", points: 50 },
+      { text: "Use Option types like a civilized developer", points: 15 },
     ],
   },
   {
-    id: "q10",
-    text: "Best comment in code",
+    id: 10,
+    question: "☁️ Somebody asks you to 'just deploy it to the cloud':",
     options: [
-      { label: "TODO: fix", score: 0 },
-      { label: "WTF?", score: 4 },
-      { label: "Magic happens here", score: 6 },
-      { label: "ASCII art of a dragon", score: 7 },
+      { text: "Which f*cking cloud? There's like 50 of them", points: 40 },
+      { text: "Sure, let me just spend $10k on AWS Lambda cold starts", points: 45 },
+      { text: "Kubernetes! Because we need 47 microservices for a TODO app", points: 50 },
+      { text: "Let's discuss requirements and choose the right platform", points: 10 },
+    ],
+  },
+  {
+    id: 11,
+    question: "📦 How do you manage dependencies?",
+    options: [
+      { text: "npm install --force until something works", points: 50 },
+      { text: "Copy paste from StackOverflow CDN links", points: 45 },
+      { text: "Vendor everything, we're going full hermit mode", points: 40 },
+      { text: "Use a proper lock file and semantic versioning", points: 10 },
+    ],
+  },
+  {
+    id: 12,
+    question: "🔥 Production is on fire. What's your move?",
+    options: [
+      { text: "Git revert, git push --force, delete evidence", points: 50 },
+      { text: "Pretend my internet is down", points: 45 },
+      { text: "Blame it on the intern who left 6 months ago", points: 40 },
+      { text: "Check logs and fix the actual issue", points: 5 },
     ],
   },
 ];
