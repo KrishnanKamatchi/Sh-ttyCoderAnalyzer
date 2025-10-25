@@ -194,7 +194,7 @@ const Index = () => {
                 className="text-2xl rotate-broken  md:text-4xl px-16 py-10 bg-hot-pink text-black hover:bg-hot-pink/80 font-black border-8 border-hot-pink hover-shake comic-sans "
                 style={{ boxShadow: "8px 8px 0px rgba(0,0,0,0.8)" }}
               >
-                💩 Take the f*kin test, I dare u 🖕
+                💩 Take the f*kin test 🖕
               </Button>
 
               <div className="flex items-center justify-center gap-3 text-base text-muted-foreground font-bold comic-sans">
