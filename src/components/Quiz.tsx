@@ -1,24 +1,27 @@
+import React, { useState } from "react";
 import QuestionCard from "./QuestionCard";
+import ResultCard from "./ResultCard";
 import { QUESTIONS } from "../data/questions";
 import { computeScore, mapToCategory } from "../utils/scoring";
-import ResultCard from "./ResultCard";
-import { useState } from "react";
+import type { AnswersMap, Category } from "../types/types";
+import type { JSX } from "react/jsx-dev-runtime";
 
-export default function Quiz() {
-  const [answers, setAnswers] = useState({});
-  const [showResult, setShowResult] = useState(false);
+export default function Quiz(): JSX.Element {
+  const [answers, setAnswers] = useState<AnswersMap>({});
+  const [showResult, setShowResult] = useState<boolean>(false);
 
-  function handleChange(qId, score) {
+  function handleChange(qId: string, score: number): void {
     setAnswers((prev) => ({ ...prev, [qId]: score }));
   }
 
-  function handleSubmit(e) {
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>): void {
     e.preventDefault();
     setShowResult(true);
   }
 
   const total = computeScore(answers);
-  const category = mapToCategory(total, QUESTIONS.length * 10);
+  const maxPossible = QUESTIONS.length * 10;
+  const category: Category = mapToCategory(total, maxPossible);
 
   if (showResult) {
     return (
@@ -43,8 +46,12 @@ export default function Quiz() {
           onChange={handleChange}
         />
       ))}
+
       <div className="flex gap-3">
-        <button type="submit" className="px-4 py-2 bg-emerald-500 rounded">
+        <button
+          type="submit"
+          className="px-4 py-2 bg-emerald-500 rounded-md font-semibold"
+        >
           Reveal my fate
         </button>
       </div>
