@@ -150,7 +150,7 @@ const Index = () => {
                 >
                   <div className="text-5xl mb-3">🎯</div>
                   <h3 className="text-xl font-black text-hot-pink mb-2 comic-sans">
-                    12 Savage AF Questions
+                    10 Savage AF Questions
                   </h3>
                   <p className="text-sm text-foreground font-bold">
                     From Arch Linux to segfaults, we're roasting EVERYTHING.
@@ -194,7 +194,7 @@ const Index = () => {
                 className="text-2xl rotate-broken  md:text-4xl px-16 py-10 bg-hot-pink text-black hover:bg-hot-pink/80 font-black border-8 border-hot-pink hover-shake comic-sans "
                 style={{ boxShadow: "8px 8px 0px rgba(0,0,0,0.8)" }}
               >
-                💩 Take the f*kin test 🖕
+                💩 Take the f*kin test, I dare u 🖕
               </Button>
 
               <div className="flex items-center justify-center gap-3 text-base text-muted-foreground font-bold comic-sans">
