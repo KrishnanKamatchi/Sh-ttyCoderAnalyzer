@@ -37,6 +37,7 @@ But hey, it makes you laugh — and maybe question your life choices.
 | Deploy | Vercel |
 | Extras | html2canvas, react-confetti |
 | Language | JavaScript (because we love pain) |
+| AI | Open AI (Im honest) and Grok |
 
 ---
 
