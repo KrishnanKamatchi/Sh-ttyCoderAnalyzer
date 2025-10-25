@@ -12,50 +12,59 @@ export const results: Result[] = [
   {
     minScore: 0,
     maxScore: 120,
-    title: "🧙 Legendary Wizard",
-    description: "Holy sh*t, you actually know what you're doing!",
-    roast: "You're either lying, ChatGPT wrote these answers, or you're the one person who actually reads the f*cking manual. Probably unemployed because you're 'overqualified' lmao.",
+    title: "🧙 Code Sorcerer Supreme",
+    description: "You're a f*cking unicorn who actually writes flawless code.",
+    roast:
+      "Well, sh#t, you majestic b#stard, you probably debug in your sleep and jerk off to clean architecture diagrams. Your code’s so perfect it makes us puke. Bet you’re unemployed ‘cause no one can handle your smug a#s. Bow down, you overqualified f*ck. 🪄",
     emoji: "🧙‍♂️",
-    color: "electric-blue",
+    color: "mystic-blue",
   },
   {
     minScore: 121,
     maxScore: 240,
-    title: "📚 StackOverflow Goblin",
-    description: "Ctrl+C, Ctrl+V is your entire personality",
-    roast: "You've never written an original line of code in your life. Your GitHub is just a collection of 'fixed typo' commits. Your browser history is 90% StackOverflow, 10% 'how to center a div'.",
+    title: "📚 StackOverflow Scavenger",
+    description: "You live off stolen code and duct-tape fixes, bro.",
+    roast:
+      "You’re a f*cking pirate, looting StackOverflow like it’s your personal codebase. Your commits are a collage of 'works on my machine' and 'fixed typo'. We get it, bro, you’re surviving, but your GitHub’s a crime scene. Keep stealing, you shady c*nt. 🦴",
     emoji: "🧟",
-    color: "puke-green",
+    color: "slime-green",
   },
   {
     minScore: 241,
     maxScore: 360,
-    title: "🤖 AI Prompt Monkey",
-    description: "ChatGPT is your IDE and you're not even ashamed",
-    roast: "You haven't written a for-loop from memory since 2022. Your job title should be 'Professional Prompt Engineer'. You panic when ChatGPT is down because you forgot how to code.",
+    title: "🤖 AI-Sucking Drone",
+    description:
+      "You’re basically ChatGPT’s b#tch, pumping out prompts like a pro.",
+    roast:
+      "Holy f*ck, you let AI wipe your a#s while you sip energy drinks. Your code’s just recycled LLM vomit, and you call it 'efficiency'. When the servers go down, you’re screwed, you prompt-pounding p#ssy. Keep kneeling to your robot overlord, bro. 🤖",
     emoji: "🤖",
-    color: "cyber-purple",
+    color: "neon-purple",
   },
   {
     minScore: 361,
     maxScore: 480,
-    title: "🤡 Chaos Developer",
-    description: "Production is your test environment",
-    roast: "You push to main on Fridays. Your commit messages are 'fix', 'fix2', 'ACTUALLY_FIXED', 'pls work'. You've never written a test in your life. DevOps hates you. Everyone hates you.",
-    emoji: "🤡",
-    color: "warning-orange",
+    title: "💥 Prod-Wrecking Psychopath",
+    description: "You treat production like a f*cking pinata and swing.",
+    roast:
+      "You absolute lunatic, yeeting untested sh#t to prod like it’s a game. Your commit messages are ‘oops’, ‘f*ck’, and ‘why’. DevOps has your face on a dartboard. Keep breaking sh#t, you chaotic c#cksucker—your disasters are legendary. 🖕",
+    emoji: "💥",
+    color: "rage-orange",
   },
   {
     minScore: 481,
     maxScore: 600,
-    title: "💩 Absolute Disaster",
-    description: "You shouldn't be allowed near a computer",
-    roast: "You're the reason we can't have nice things. Your code is a war crime. You make PHP look good. Your IDE is probably Microsoft Word. Please change careers immediately, I'm begging you.",
+    title: "💩 Dumpster Fire Dev",
+    description: "Your existence is a bug report, you beautiful catastrophe.",
+    roast:
+      "Motherf*cker, you’re the reason we have rollbacks and therapy. Your bugs have fan clubs. Tech or non-tech, you’re a walking sh#tshow. Quit coding and sell hotdogs, you glorious f*ck-up. Take a bow, then delete yourself. 🔥",
     emoji: "💩",
-    color: "angry-red",
+    color: "toxic-red",
   },
 ];
 
 export function getResult(score: number): Result {
-  return results.find((r) => score >= r.minScore && score <= r.maxScore) || results[results.length - 1];
+  return (
+    results.find((r) => score >= r.minScore && score <= r.maxScore) ||
+    results[results.length - 1]
+  );
 }
