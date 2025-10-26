@@ -7,6 +7,28 @@ Think Buzzfeed quiz meets StackOverflow meltdown.
 
 ---
 
+> ⚠️ **Disclaimer:**
+> 
+> This project is made purely for **fun and entertainment purposes** 😜  
+> It’s **not meant to hurt anyone’s feelings** 💅 —  
+> but if you *still* get offended... **I honestly don’t care.** 🤷‍♂️🔥
+
+---
+
+
+## Preview
+
+<img width="1920" height="1168" alt="image" src="https://github.com/user-attachments/assets/0ec68506-93ba-4621-b6a6-082202b26246" />
+<br><br>
+
+<img width="1920" height="1168" alt="image" src="https://github.com/user-attachments/assets/c8484b0d-405f-41f1-a864-532468850492" />
+<br><br>
+
+<img width="1920" height="1168" alt="image" src="https://github.com/user-attachments/assets/9f388ad9-1292-47ac-8110-b3cb219e5288" />
+
+
+---
+
 ## 🚀 What is this?
 
 This is a **web app built with React + Tailwind** that asks you a series of ridiculous, dev-related questions.
@@ -19,12 +41,12 @@ But hey, it makes you laugh — and maybe question your life choices.
 
 ## 🧠 Features
 
-- 🔥 10–15 dev-themed questions: sarcasm, chaos, caffeine — all included
+- 🔥 10 dev-themed questions: sarcasm, chaos, caffeine — all included
 - 💀 “Raw Mode” — for people who think code reviews are personal attacks
 - 🎉 Animated result card with roast messages
 - 🧻 Shareable meme generator (coming soon)
 - 🧙‍♂️ Simple, client-side only (no backend magic... yet)
-- 🪦 0% serious, 100% accurate
+- 🪦 0% serious, 100% accurate, 1000% funny
 
 ---
 
